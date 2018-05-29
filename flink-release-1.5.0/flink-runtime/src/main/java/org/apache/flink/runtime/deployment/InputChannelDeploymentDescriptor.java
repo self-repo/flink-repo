@@ -103,9 +103,7 @@ public class InputChannelDeploymentDescriptor implements Serializable {
 			// The producing task needs to be RUNNING or already FINISHED
 			if (consumedPartition.isConsumable() && producerSlot != null &&
 					(producerState == ExecutionState.RUNNING ||
-						producerState == ExecutionState.FINISHED ||
-						producerState == ExecutionState.SCHEDULED ||
-						producerState == ExecutionState.DEPLOYING)) {
+						producerState == ExecutionState.FINISHED)) {
 
 				final TaskManagerLocation partitionTaskManagerLocation = producerSlot.getTaskManagerLocation();
 				final ResourceID partitionTaskManager = partitionTaskManagerLocation.getResourceID();
